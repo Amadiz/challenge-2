@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 2 - Juego del Ahorcado</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script language="javascript" type="text/javascript" src="main.js"></script>
+</head>
+<body onload="dibujarTeclado();">
+    <div class="contenido">
+        <div id="panelLogo" class="logo"><img id="imgLogo" src="logo.png" alt="Logo"></div>
+        <div class="principal">
+            <div id="panel0" class="panel0">
+                <button id="btnIniciar" class="round-button btnPrimario" onclick="iniciarJuego()">Iniciar Juego</button>
+                <button id="btnAgregar" class="round-button btnSecundario" onclick="abrirAgregarPalabra()">Agregar Palabra</button>
+                <div onclick="listarPalabras()">Desarrollado por: Angélica Díaz</div>
+            </div>    
+            <div id="panelA" class="panelA">            
+                <div id="lienzo"><img id="ahorcado" src="0.png" alt="Imagen del Ahorcado"></div>
+                <div id="secGuiones">
+                    <!-- TEXTO 1 -->
+                </div>
+                <div id="teclado"></div>
+                <div class="leyenda"><i class="fa fa-exclamation-circle"></i>Use el teclado para adivinar letras de la palabra.</div>
+                <div class="controles">
+                    <button id="btnAbandonar" class="round-button btnPrimario" onclick="finalizarJuego()">Finalizar Juego</button>
+                </div>
+            </div>
+            <div id="panelB" class="panelB">
+                <h2>Agregar Palabra</h2>
+                <p>
+                    La palabra no debe contener acentos y debe ser mayor a 6 letras.
+                </p>    
+                <input id="nuevaPalabra" type="text" maxlength="10" placeholder="Escriba aquí">                
+                <button class="round-button btnPrimario" onclick="agregarPalabra()">Agregar</button>
+                <button class="round-button btnSecundario" onclick="cerrarAgregarPalabra()">Cancelar</button>                
+            </div>
+            <div id="panelC" class="panelC">
+                <h2>Felicidades!!!</h2>
+                <div><img src="ganaste.gif" alt="ganaste"></div>
+                <h2>Haz Ganado!!!</h2>
+                <button class="round-button btnPrimario" onclick="volveraJugar()">Volver a Jugar</button>
+            </div>
+            <div id="panelD" class="panelD">
+                <h2>Fin del Juego!!!</h2>
+                <div><img src="fallaste.gif" alt="ganaste"></div>
+                <h2>Haz Fallado!!!. La palabra era: <span id="palabraCorrecta"></span></h2>
+                <button class="round-button btnPrimario" onclick="volveraJugar()">Volver a Jugar</button>
+            </div>            
+        </div>
+    </div>
+</body>
+</html>
